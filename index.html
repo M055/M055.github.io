@@ -1,69 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Deploy TF</title>
-    <style type="text/css">
-        body {
-            margin: 0;
-        }
-    </style>
-</head>
+<!DOCTYPE html>
+<html>
 <body>
-
-<label>Land Image File:</label><br/>
-<input type="file" id="imageLoader" name="imageLoader"/>
-<canvas id="imageCanvas"></canvas>
-
-<script type="text/javascript">
-
-var imageLoader = document.getElementById('imageLoader');
-    imageLoader.addEventListener('change', handleImage, false);
-var canvas = document.getElementById('imageCanvas');
-var ctx = canvas.getContext('2d');
-
-
-function handleImage(e){
-    var MAX_WIDTH = 200;
-    var MAX_HEIGHT = 300;
-    var reader = new FileReader();
-    reader.onload = function(event){
-        var img = new Image();
-
-        img.onload = function(){
-          var width = img.width;
-          var height = img.height;
-          if (width > height) {
-            if (width > MAX_WIDTH) {
-              height *= MAX_WIDTH / width;
-              width = MAX_WIDTH;
-            }
-          } else {
-            if (height > MAX_HEIGHT) {
-              width *= MAX_HEIGHT / height;
-              height = MAX_HEIGHT;
-            }
-          }
-          canvas.width = width;
-          canvas.height = height;
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img,0,0);
-        }
-        img.src = event.target.result;
-    }
-    reader.readAsDataURL(e.target.files[0]);
-}
-
-
-//var ctx = canvas.getContext("2d");
-//ctx.drawImage(img, 0, 0, width, height);
-
-
-
-
-
-</script>
-
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
 </body>
 </html>
